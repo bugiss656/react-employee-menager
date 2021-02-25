@@ -1,10 +1,10 @@
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import EmployeesList from './components/EmployeesList';
+import EmployeeDetails from './components/EmployeeDetails';
 import AddEmployee from './components/AddEmployee';
 import Reports from './components/Reports';
 import Settings from './components/Settings';
-import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import FetchData from './hooks/FetchData';
 
@@ -19,10 +19,13 @@ const App = () => {
         <div className="d-flex flex-row">
           <Sidebar />
           <Switch>
-            <Route path="/employeeslist" exact >
+            <Route path="/employees" exact >
               {error && <div>{error}</div>}
               {isLoading && <div>Loading...</div> }
-              {employees && <EmployeesList employees={employees}/>}
+              {employees && <EmployeesList employees={employees} />}
+            </Route>
+            <Route path="/employees/:id" exact>
+              <EmployeeDetails employees={employees}/>
             </Route>
             <Route path="/addworker" exact>
               <AddEmployee />

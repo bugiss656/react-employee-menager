@@ -5,15 +5,15 @@ const Sidebar = () => {
         <nav className="sidebar">
             <ul className="nav flex-column">
                 <li className="nav-item">
-                    <Link to="/employeeslist" className="nav-link active">
+                    <Link to="/employees" className="nav-link active">
                         <i className="bi bi-people pe-2"></i>
-                        Workers list
+                        Employee list
                     </Link>
                 </li>
                 <li className="nav-item">
                     <Link to="/addworker" className="nav-link active">
                         <i className="bi bi-person-plus pe-2"></i>
-                        Add new worker
+                        Add new employee
                     </Link>
                 </li>
                 <li className="nav-item">

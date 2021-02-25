@@ -1,4 +1,4 @@
-
+import { Link } from 'react-router-dom';
 
 const Employee = ({ id, first_name, last_name, position, address, phone_nr }) => {
     return (
@@ -9,6 +9,11 @@ const Employee = ({ id, first_name, last_name, position, address, phone_nr }) =>
             <td>{position}</td>
             <td>{address}</td>
             <td>{phone_nr}</td>
+            <td>
+                <Link to={`/employees/${id}`}>
+                    <i className="bi bi-file-earmark-person"></i>
+                </Link>
+            </td>
         </tr>
     );
 }

@@ -6,7 +6,8 @@ const FetchData = (url) => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch(url)
+        setTimeout(() => {
+            fetch(url)
             .then(res => {
                 if(!res.ok) {
                     throw Error();
@@ -22,6 +23,7 @@ const FetchData = (url) => {
                 setIsLoading(false);
                 setError(err.message);
             })
+        }, 1000);
     }, [url]);
 
     return { data, isLoading, error };

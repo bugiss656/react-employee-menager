@@ -1,5 +1,6 @@
 import Employee from './Employee';
 
+
 const EmployeesList = ({ employees }) => {
     return (
         <section className="page-section">
@@ -14,15 +15,16 @@ const EmployeesList = ({ employees }) => {
                         <th>Position</th>
                         <th>Address</th>
                         <th>Phone number</th>
+                        <th>Details</th>
                     </tr>
                 </thead>
                 <tbody>
                     {employees.map(employee => (
-                        <Employee 
+                        <Employee
                             key={employee.id}
                             id={employee.id}
                             first_name={employee.first_name}
-                            last_name={employee.last_name} 
+                            last_name={employee.last_name}
                             position={employee.position}
                             address={employee.address}
                             phone_nr={employee.phone_nr}>
