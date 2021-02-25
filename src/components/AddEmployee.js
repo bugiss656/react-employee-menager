@@ -1,6 +1,6 @@
 
 
-const AddWorker = () => {
+const AddEmployee = () => {
     return (
         <section className="page-section">
             <h3>Add worker</h3>
@@ -8,4 +8,4 @@ const AddWorker = () => {
     );
 }
 
-export default AddWorker;
+export default AddEmployee;

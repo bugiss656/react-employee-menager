@@ -1,35 +1,17 @@
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import EmployeesList from './components/EmployeesList';
-import AddWorker from './components/AddWorker';
+import AddEmployee from './components/AddEmployee';
 import Reports from './components/Reports';
 import Settings from './components/Settings';
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import FetchData from './hooks/FetchData';
 
 
 const App = () => {
-  const [employees, setEmployees] = useState(null);
+  const { data: employees, isLoading, error } = FetchData('http://localhost:5000/employees');
 
-
-  useEffect(() => {
-    const sendRequest = async () => {
-      const allEmployees = await fetchEmployees();
-      setEmployees(allEmployees);
-    }
-
-    sendRequest();
-  }, []);
-
-
-  const fetchEmployees = async () => {
-    const res = await fetch('http://localhost:5000/employees');
-    const data = await res.json();
-
-    return data;
-  }
-
-  
   return (
     <div>
       <Router>
@@ -38,10 +20,12 @@ const App = () => {
           <Sidebar />
           <Switch>
             <Route path="/employeeslist" exact >
+              {error && <div>{error}</div>}
+              {isLoading && <div>Loading...</div> }
               {employees && <EmployeesList employees={employees}/>}
             </Route>
             <Route path="/addworker" exact>
-              <AddWorker />
+              <AddEmployee />
             </Route>
             <Route path="/reports" exact>
               <Reports />
