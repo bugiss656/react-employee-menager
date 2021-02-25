@@ -1,23 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from './components/Navbar';
+import Sidebar from './components/Sidebar';
+import EmployeesList from './components/EmployeesList';
+import AddWorker from './components/AddWorker';
+import Reports from './components/Reports';
+import Settings from './components/Settings';
+import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-function App() {
+
+const App = () => {
+  const [employees, setEmployees] = useState(null);
+
+
+  useEffect(() => {
+    const sendRequest = async () => {
+      const allEmployees = await fetchEmployees();
+      setEmployees(allEmployees);
+    }
+
+    sendRequest();
+  }, []);
+
+
+  const fetchEmployees = async () => {
+    const res = await fetch('http://localhost:5000/employees');
+    const data = await res.json();
+
+    return data;
+  }
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+        <Navbar />
+        <div className="d-flex flex-row">
+          <Sidebar />
+          <Switch>
+            <Route path="/employeeslist" exact >
+              {employees && <EmployeesList employees={employees}/>}
+            </Route>
+            <Route path="/addworker" exact>
+              <AddWorker />
+            </Route>
+            <Route path="/reports" exact>
+              <Reports />
+            </Route>
+            <Route path="/settings" exact>
+              <Settings />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     </div>
   );
 }

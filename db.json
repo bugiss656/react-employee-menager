@@ -1,0 +1,5 @@
+{
+  "employees": [
+      {"id": 1, "first_name": "John", "last_name": "Doe", "position": "Accountant", "address": "ul. Tatrzańska 7, Poronin", "phone_nr": "111-222-333"}
+  ]
+}
