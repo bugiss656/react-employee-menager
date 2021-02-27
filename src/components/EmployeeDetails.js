@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 const EmployeeDetails = ({ employees }) => {
     const { id } = useParams();
     const current_employee = employees.filter(employee => employee.id === parseInt(id));
-
+    
     return (
         <section className="page-section">
             <h3>Profile details</h3>
@@ -19,15 +19,18 @@ const EmployeeDetails = ({ employees }) => {
                     <ul className="list-group list-group-flush">
                         <li className="list-group-item"><b>First name: </b>{current_employee[0].first_name}</li>
                         <li className="list-group-item"><b>Last name: </b>{current_employee[0].last_name}</li>
-                        <li className="list-group-item"><b>Position: </b>{current_employee[0].position}</li>
                         <li className="list-group-item"><b>Address: </b>{current_employee[0].address}</li>
                         <li className="list-group-item"><b>Phone number: </b>{current_employee[0].phone_nr}</li>
+                        <li className="list-group-item"><b>Email: </b>{current_employee[0].email}</li>
                     </ul>
                 </div>
                 <div className="profile-work-info">
                     <h5>Work informations:</h5>
                     <ul className="list-group list-group-flush">
-
+                        <li className="list-group-item"><b>Position: </b>{current_employee[0].position}</li>
+                        <li className="list-group-item"><b>Employment date: </b>{current_employee[0].employment_date}</li>
+                        <li className="list-group-item"><b>Contract length: </b>{current_employee[0].contract_length}</li>
+                        <li className="list-group-item"><b>Seniority: </b>{current_employee[0].seniority} years</li>
                     </ul>
                 </div>
             </div>

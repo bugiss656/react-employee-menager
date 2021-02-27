@@ -68,7 +68,7 @@ code {
 
 }
 
-.profile-img {
+.profile-img, .profile-general-info, .profile-work-info {
   margin: 0 25px 0 25px;
 }
 
@@ -78,7 +78,6 @@ code {
 }
 
 .profile-info {
-  margin: 0 25px 0 25px;
   border-left: 1px solid #fff;
 }
 

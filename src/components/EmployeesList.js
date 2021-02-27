@@ -25,9 +25,15 @@ const EmployeesList = ({ employees }) => {
                             id={employee.id}
                             first_name={employee.first_name}
                             last_name={employee.last_name}
-                            position={employee.position}
                             address={employee.address}
-                            phone_nr={employee.phone_nr}>
+                            phone_nr={employee.phone_nr}
+                            email={employee.email}
+                            position={employee.position}
+                            employment_date={employee.employment_date}
+                            contract_length={employee.contract_length}
+                            seniority={employee.seniority}
+                        >
+                            
                         </Employee>
                     ))}
                 </tbody>
