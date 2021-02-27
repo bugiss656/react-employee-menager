@@ -2,7 +2,7 @@
 
 const Reports = () => {
     return (
-        <div className="col-md-10">
+        <div className="page-section">
             <h1>Reports</h1>
         </div>
     );

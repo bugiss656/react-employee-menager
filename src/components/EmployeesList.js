@@ -32,8 +32,7 @@ const EmployeesList = ({ employees }) => {
                             employment_date={employee.employment_date}
                             contract_length={employee.contract_length}
                             seniority={employee.seniority}
-                        >
-                            
+                        >    
                         </Employee>
                     ))}
                 </tbody>

@@ -2,7 +2,7 @@
 
 const Settings = () => {
     return (
-        <div className="col-md-10">
+        <div className="page-section">
             <h1>Settings</h1>
         </div>
     );
