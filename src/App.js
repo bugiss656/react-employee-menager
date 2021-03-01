@@ -6,40 +6,35 @@ import AddEmployee from './components/AddEmployee';
 import Reports from './components/Reports';
 import Settings from './components/Settings';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import FetchData from './hooks/FetchData';
 
 
 const App = () => {
-  const { data: employees, isLoading, error } = FetchData('http://localhost:5000/employees');
-
   return (
-    <div>
-      <Router>
-        <Navbar />
-        <div className="d-flex flex-row">
-          <Sidebar />
+    <Router>
+      <Navbar />
+      <div className="d-flex flex-row">
+        <Sidebar />
+        <div className="main-wrapper">
           <Switch>
-            <Route path="/employees" exact >
-              { error && <div>{error}</div> }
-              { isLoading && <div>Loading...</div> }
-              { employees && <EmployeesList employees={employees} /> }
+            <Route exact path="/employees">
+              <EmployeesList />
             </Route>
-            <Route path="/employees/:id" exact>
-              <EmployeeDetails employees={employees}/>
+            <Route path="/employees/:id">
+              <EmployeeDetails />
             </Route>
-            <Route path="/addworker" exact>
+            <Route exact path="/addemployee">
               <AddEmployee />
             </Route>
-            <Route path="/reports" exact>
+            <Route exact path="/reports">
               <Reports />
             </Route>
-            <Route path="/settings" exact>
+            <Route exact path="/settings">
               <Settings />
             </Route>
           </Switch>
         </div>
-      </Router>
-    </div>
+      </div>
+    </Router>
   );
 }
 

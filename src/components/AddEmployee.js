@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 const AddEmployee = () => {
     const [first_name, setFirstName] = useState('');
@@ -9,6 +10,7 @@ const AddEmployee = () => {
     const [position, setPosition] = useState('');
     const [employment_date, setEmploymentDate] = useState('');
     const [contract_type, setContractType] = useState('');
+    const history = useHistory();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -28,6 +30,7 @@ const AddEmployee = () => {
             body: JSON.stringify(employee)
         }).then(() => {
             console.log("New employee added...");
+            history.push('/employees');
         })
     }
 

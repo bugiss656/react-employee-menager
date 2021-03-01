@@ -10,7 +10,7 @@ const FetchData = (url) => {
             fetch(url)
             .then(res => {
                 if(!res.ok) {
-                    throw Error();
+                    throw Error('Erro has occured, please try again');
                 }
                 return res.json();
             })

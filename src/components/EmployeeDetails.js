@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import FetchData from './../hooks/FetchData';
 
 
-const EmployeeDetails = ({ employees }) => {
+const EmployeeDetails = () => {
     const { id } = useParams();
     const { data: employee, error, isLoading } = FetchData(`http://localhost:5000/employees/${id}`);
     

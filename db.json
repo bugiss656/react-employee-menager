@@ -59,6 +59,28 @@
       "employment_date": "2014-01-01",
       "contract_length": "indefinite period",
       "seniority": "6"
+    },
+    {
+      "first_name": "George",
+      "last_name": "Michael",
+      "address": "30 Avenue",
+      "phone_nr": "343454565",
+      "email": "george@mail.com",
+      "position": "dealer",
+      "employment_date": "2021-03-04",
+      "contract_type": "1 year contract",
+      "id": 6
+    },
+    {
+      "first_name": "Michael",
+      "last_name": "Jordan",
+      "address": "43 Avenue",
+      "phone_nr": "656776667",
+      "email": "jordan@mail.com",
+      "position": "warehouseman",
+      "employment_date": "2021-03-02",
+      "contract_type": "indefinite period conract",
+      "id": 7
     }
   ]
 }
