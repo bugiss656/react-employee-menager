@@ -1,9 +1,64 @@
 {
   "employees": [
-      {"id": 1, "first_name": "John", "last_name": "Doe", "position": "Accountant", "address": "ul. Tatrzańska 7, Poronin", "phone_nr": "111-222-333", "email": "email@gmail.com", "employment_date": "2014-01-01", "contract_length": "indefinite period", "seniority": "6"},
-      {"id": 2, "first_name": "Adam", "last_name": "Doe", "position": "Accountant", "address": "ul. Tatrzańska 10, Poronin", "phone_nr": "212-222-333", "email": "email@gmail.com", "employment_date": "2014-01-01", "contract_length": "indefinite period", "seniority": "6"},
-      {"id": 3, "first_name": "Chris", "last_name": "Doe", "position": "Representative", "address": "ul. Podhalańska 32, Poronin", "phone_nr": "555-222-333", "email": "email@gmail.com", "employment_date": "2014-01-01", "contract_length": "indefinite period", "seniority": "6"},
-      {"id": 4, "first_name": "Paul", "last_name": "Doe", "position": "Dealer", "address": "ul. Podtatrzańska 33, Poronin", "phone_nr": "111-666-333", "email": "email@gmail.com", "employment_date": "2014-01-01", "contract_length": "indefinite period", "seniority": "6"},
-      {"id": 5, "first_name": "Michael", "last_name": "Doe", "position": "Dealer", "address": "ul. Nowotarska 7, Poronin", "phone_nr": "111-787-333", "email": "email@gmail.com", "employment_date": "2014-01-01", "contract_length": "indefinite period", "seniority": "6"}
+    {
+      "id": 1,
+      "first_name": "John",
+      "last_name": "Doe",
+      "position": "Accountant",
+      "address": "ul. Tatrzańska 7, Poronin",
+      "phone_nr": "111-222-333",
+      "email": "email@gmail.com",
+      "employment_date": "2014-01-01",
+      "contract_length": "indefinite period",
+      "seniority": "6"
+    },
+    {
+      "id": 2,
+      "first_name": "Adam",
+      "last_name": "Doe",
+      "position": "Accountant",
+      "address": "ul. Tatrzańska 10, Poronin",
+      "phone_nr": "212-222-333",
+      "email": "email@gmail.com",
+      "employment_date": "2014-01-01",
+      "contract_length": "indefinite period",
+      "seniority": "6"
+    },
+    {
+      "id": 3,
+      "first_name": "Chris",
+      "last_name": "Doe",
+      "position": "Representative",
+      "address": "ul. Podhalańska 32, Poronin",
+      "phone_nr": "555-222-333",
+      "email": "email@gmail.com",
+      "employment_date": "2014-01-01",
+      "contract_length": "indefinite period",
+      "seniority": "6"
+    },
+    {
+      "id": 4,
+      "first_name": "Paul",
+      "last_name": "Doe",
+      "position": "Dealer",
+      "address": "ul. Podtatrzańska 33, Poronin",
+      "phone_nr": "111-666-333",
+      "email": "email@gmail.com",
+      "employment_date": "2014-01-01",
+      "contract_length": "indefinite period",
+      "seniority": "6"
+    },
+    {
+      "id": 5,
+      "first_name": "Michael",
+      "last_name": "Doe",
+      "position": "Dealer",
+      "address": "ul. Nowotarska 7, Poronin",
+      "phone_nr": "111-787-333",
+      "email": "email@gmail.com",
+      "employment_date": "2014-01-01",
+      "contract_length": "indefinite period",
+      "seniority": "6"
+    }
   ]
 }

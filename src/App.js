@@ -20,9 +20,9 @@ const App = () => {
           <Sidebar />
           <Switch>
             <Route path="/employees" exact >
-              {error && <div>{error}</div>}
-              {isLoading && <div>Loading...</div> }
-              {employees && <EmployeesList employees={employees} />}
+              { error && <div>{error}</div> }
+              { isLoading && <div>Loading...</div> }
+              { employees && <EmployeesList employees={employees} /> }
             </Route>
             <Route path="/employees/:id" exact>
               <EmployeeDetails employees={employees}/>

@@ -21,7 +21,14 @@ const AddEmployee = () => {
             employment_date, 
             contract_type 
         };
-        console.log(employee);
+        
+        fetch('http://localhost:5000/employees', {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(employee)
+        }).then(() => {
+            console.log("New employee added...");
+        })
     }
 
     return (
