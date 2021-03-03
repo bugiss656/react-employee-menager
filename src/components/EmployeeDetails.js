@@ -1,10 +1,10 @@
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import FetchData from './../hooks/FetchData';
 
 
 const EmployeeDetails = () => {
     const { id } = useParams();
-    const { data: employee, error, isLoading } = FetchData(`http://localhost:5000/employees/${id}`);
+    const { data: employee, isLoading, error } = FetchData(`http://localhost:5000/employees/${id}`);
     
     return (
         <section className="page-section">
@@ -16,7 +16,9 @@ const EmployeeDetails = () => {
                 <div className="d-flex flex-row employee-details">
                     <div className="d-flex flex-column profile-img align-items-center">
                         <i className="bi bi-person-circle"></i>
-                        <button className="btn btn-outline-secondary">Update profile info</button>
+                        <Link to={`/updateemployee/${employee.id}`}>
+                            <button className="btn btn-outline-secondary">Update profile info</button>
+                        </Link> 
                     </div>
                     <div className="profile-general-info">
                         <h5>General informations:</h5>

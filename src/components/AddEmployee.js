@@ -118,11 +118,11 @@ const AddEmployee = () => {
                             placeholder="Position"
                         >
                             <option value=""></option>
-                            <option value="accountant">Accountant</option>
-                            <option value="dealer">Dealer</option>
-                            <option value="manager">Manager</option>
-                            <option value="warehouseman">Warehouseman</option>
-                            <option value="customer service">Customer service</option>
+                            <option value="Accountant">Accountant</option>
+                            <option value="Dealer">Dealer</option>
+                            <option value="Manager">Manager</option>
+                            <option value="Warehouseman">Warehouseman</option>
+                            <option value="Customer service">Customer service</option>
                         </select>
                         <label htmlFor="position">Position</label>
                     </div>
@@ -147,10 +147,10 @@ const AddEmployee = () => {
                             placeholder="Contract type"
                         >
                             <option value=""></option>
-                            <option value="practice">Practice</option>
-                            <option value="internship">Internship</option>
+                            <option value="Practice">Practice</option>
+                            <option value="Internship">Internship</option>
                             <option value="1 year contract">1 year contract</option>
-                            <option value="indefinite period conract">Indefinite period conract</option>
+                            <option value="Indefinite period conract">Indefinite period conract</option>
                         </select>
                         <label htmlFor="contract-type">Contract type</label>
                     </div>

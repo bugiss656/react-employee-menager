@@ -3,6 +3,7 @@ import Sidebar from './components/Sidebar';
 import EmployeesList from './components/EmployeesList';
 import EmployeeDetails from './components/EmployeeDetails';
 import AddEmployee from './components/AddEmployee';
+import UpdateEmployee from './components/UpdateEmployee';
 import Reports from './components/Reports';
 import Settings from './components/Settings';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -24,6 +25,9 @@ const App = () => {
             </Route>
             <Route exact path="/addemployee">
               <AddEmployee />
+            </Route>
+            <Route exact path="/updateemployee/:id">
+              <UpdateEmployee />
             </Route>
             <Route exact path="/reports">
               <Reports />
