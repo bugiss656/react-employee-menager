@@ -7,6 +7,15 @@ const UpdateEmployeeForm = ({ employee }) => {
 
     const onSubmit = (data) => {
         console.log(data);
+        fetch(`http://localhost:5000/employees/${employee.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        }).then(() => {
+            console.log('Employee profile updated...');
+        });
     }
 
     return (
@@ -94,11 +103,11 @@ const UpdateEmployeeForm = ({ employee }) => {
                             placeholder="Position"
                         >
                             <option value=""></option>
-                            <option value="accountant">Accountant</option>
-                            <option value="dealer">Dealer</option>
-                            <option value="manager">Manager</option>
-                            <option value="warehouseman">Warehouseman</option>
-                            <option value="customer service">Customer service</option>
+                            <option value="Accountant">Accountant</option>
+                            <option value="Dealer">Dealer</option>
+                            <option value="Manager">Manager</option>
+                            <option value="Warehouseman">Warehouseman</option>
+                            <option value="Customer service">Customer service</option>
                         </select>
                         <label htmlFor="position">Position</label>
                     </div>
@@ -106,7 +115,7 @@ const UpdateEmployeeForm = ({ employee }) => {
                         <input
                             ref={register}
                             type="date"
-                            name="employment-date"
+                            name="employment_date"
                             className="form-control"
                             id="employment-date"
                             placeholder="Date of employment" />
@@ -123,15 +132,15 @@ const UpdateEmployeeForm = ({ employee }) => {
                             placeholder="Contract type"
                         >
                             <option value=""></option>
-                            <option value="practice">Practice</option>
-                            <option value="internship">Internship</option>
+                            <option value="Practice">Practice</option>
+                            <option value="Internship">Internship</option>
                             <option value="1 year contract">1 year contract</option>
-                            <option value="indefinite period conract">Indefinite period conract</option>
+                            <option value="Indefinite period contract">Indefinite period conract</option>
                         </select>
                         <label htmlFor="contract-type">Contract type</label>
                     </div>
                 </div>
-                <button className="btn btn-outline-success">Add employee</button>
+                <button className="btn btn-outline-success">Update profile</button>
             </form>
         </section>
     );

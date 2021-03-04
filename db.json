@@ -1,16 +1,15 @@
 {
   "employees": [
     {
-      "id": 1,
-      "first_name": "John",
-      "last_name": "Doe",
-      "position": "Accountant",
+      "first_name": "Anthony",
+      "last_name": "Joshua",
       "address": "ul. Tatrzańska 7, Poronin",
       "phone_nr": "111-222-333",
       "email": "email@gmail.com",
+      "position": "Accountant",
       "employment_date": "2014-01-01",
-      "contract_length": "indefinite period",
-      "seniority": "6"
+      "contract_type": "Internship",
+      "id": 1
     },
     {
       "id": 2,
@@ -21,32 +20,30 @@
       "phone_nr": "212-222-333",
       "email": "email@gmail.com",
       "employment_date": "2014-01-01",
-      "contract_length": "indefinite period",
+      "contract_type": "indefinite period",
       "seniority": "6"
     },
     {
-      "id": 3,
       "first_name": "Chris",
-      "last_name": "Doe",
-      "position": "Representative",
+      "last_name": "Byrd",
       "address": "ul. Podhalańska 32, Poronin",
       "phone_nr": "555-222-333",
-      "email": "email@gmail.com",
-      "employment_date": "2014-01-01",
-      "contract_length": "indefinite period",
-      "seniority": "6"
+      "email": "byrd@gmail.com",
+      "position": "Accountant",
+      "employment_date": "2021-03-08",
+      "contract_type": "Indefinite period contract",
+      "id": 3
     },
     {
-      "id": 4,
       "first_name": "Paul",
-      "last_name": "Doe",
-      "position": "Dealer",
+      "last_name": "Walker",
       "address": "ul. Podtatrzańska 33, Poronin",
       "phone_nr": "111-666-333",
-      "email": "email@gmail.com",
-      "employment_date": "2014-01-01",
-      "contract_length": "indefinite period",
-      "seniority": "6"
+      "email": "walker@gmail.com",
+      "position": "Customer service",
+      "employment_date": "2021-03-06",
+      "contract_type": "1 year contract",
+      "id": 4
     },
     {
       "id": 5,
@@ -57,7 +54,7 @@
       "phone_nr": "111-787-333",
       "email": "email@gmail.com",
       "employment_date": "2014-01-01",
-      "contract_length": "indefinite period",
+      "contract_type": "indefinite period",
       "seniority": "6"
     },
     {

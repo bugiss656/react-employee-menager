@@ -35,7 +35,7 @@ const EmployeeDetails = () => {
                         <ul className="list-group list-group-flush">
                             <li className="list-group-item"><b>Position: </b>{employee.position}</li>
                             <li className="list-group-item"><b>Employment date: </b>{employee.employment_date}</li>
-                            <li className="list-group-item"><b>Contract length: </b>{employee.contract_length}</li>
+                            <li className="list-group-item"><b>Contract type: </b>{employee.contract_type}</li>
                             <li className="list-group-item"><b>Seniority: </b>{employee.seniority} years</li>
                         </ul>
                     </div>
