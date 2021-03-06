@@ -1,12 +1,13 @@
 import { useForm } from "react-hook-form";
+import { useHistory } from 'react-router-dom';
 
 const UpdateEmployeeForm = ({ employee }) => {
+    const history = useHistory();
     const { register, handleSubmit } = useForm({
         defaultValues: employee
     });
 
     const onSubmit = (data) => {
-        console.log(data);
         fetch(`http://localhost:5000/employees/${employee.id}`, {
             method: "PUT",
             headers: {
@@ -15,6 +16,7 @@ const UpdateEmployeeForm = ({ employee }) => {
             body: JSON.stringify(data)
         }).then(() => {
             console.log('Employee profile updated...');
+            history.push(`/employees/${employee.id}`);
         });
     }
 
@@ -27,7 +29,6 @@ const UpdateEmployeeForm = ({ employee }) => {
                 <div className="row g-2 mb-3">
                     <div className="col-md-3 form-floating">
                         <input
-
                             ref={register}
                             required
                             name="first_name"

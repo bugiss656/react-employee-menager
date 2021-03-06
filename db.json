@@ -1,8 +1,8 @@
 {
   "employees": [
     {
-      "first_name": "Anthony",
-      "last_name": "Joshua",
+      "first_name": "Geoff",
+      "last_name": "Rowley",
       "address": "ul. Tatrzańska 7, Poronin",
       "phone_nr": "111-222-333",
       "email": "email@gmail.com",
@@ -12,16 +12,15 @@
       "id": 1
     },
     {
-      "id": 2,
       "first_name": "Adam",
       "last_name": "Doe",
-      "position": "Accountant",
       "address": "ul. Tatrzańska 10, Poronin",
       "phone_nr": "212-222-333",
       "email": "email@gmail.com",
+      "position": "Accountant",
       "employment_date": "2014-01-01",
-      "contract_type": "indefinite period",
-      "seniority": "6"
+      "contract_type": "1 year contract",
+      "id": 2
     },
     {
       "first_name": "Chris",
@@ -46,18 +45,6 @@
       "id": 4
     },
     {
-      "id": 5,
-      "first_name": "Michael",
-      "last_name": "Doe",
-      "position": "Dealer",
-      "address": "ul. Nowotarska 7, Poronin",
-      "phone_nr": "111-787-333",
-      "email": "email@gmail.com",
-      "employment_date": "2014-01-01",
-      "contract_type": "indefinite period",
-      "seniority": "6"
-    },
-    {
       "first_name": "George",
       "last_name": "Michael",
       "address": "30 Avenue",
@@ -67,17 +54,6 @@
       "employment_date": "2021-03-04",
       "contract_type": "1 year contract",
       "id": 6
-    },
-    {
-      "first_name": "Michael",
-      "last_name": "Jordan",
-      "address": "43 Avenue",
-      "phone_nr": "656776667",
-      "email": "jordan@mail.com",
-      "position": "warehouseman",
-      "employment_date": "2021-03-02",
-      "contract_type": "indefinite period conract",
-      "id": 7
     }
   ]
 }

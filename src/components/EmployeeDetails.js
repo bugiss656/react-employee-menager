@@ -1,10 +1,19 @@
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useHistory } from 'react-router-dom';
 import FetchData from './../hooks/FetchData';
 
 
 const EmployeeDetails = () => {
     const { id } = useParams();
     const { data: employee, isLoading, error } = FetchData(`http://localhost:5000/employees/${id}`);
+    const history = useHistory();
+
+    const deleteEmployee = () => {
+        fetch(`http://localhost:5000/employees/${employee.id}`, {
+            method: 'DELETE',
+        }).then(() => {
+            history.push('/employees');
+        });
+    }
     
     return (
         <section className="page-section">
@@ -18,7 +27,8 @@ const EmployeeDetails = () => {
                         <i className="bi bi-person-circle"></i>
                         <Link to={`/updateemployee/${employee.id}`}>
                             <button className="btn btn-outline-secondary">Update profile info</button>
-                        </Link> 
+                        </Link>      
+                        <button onClick={deleteEmployee} className="btn btn-outline-danger">Delete profile</button> 
                     </div>
                     <div className="profile-general-info">
                         <h5>General informations:</h5>
