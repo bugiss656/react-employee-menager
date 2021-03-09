@@ -1,8 +1,10 @@
+import { useEffect } from 'react';
 import { Link, useParams, useHistory } from 'react-router-dom';
 import FetchData from './../hooks/FetchData';
+import Alert from './Alert';
 
 
-const EmployeeDetails = () => {
+const EmployeeDetails = ({ alert, handleAlert }) => {
     const { id } = useParams();
     const { data: employee, isLoading, error } = FetchData(`http://localhost:5000/employees/${id}`);
     const history = useHistory();
@@ -12,22 +14,29 @@ const EmployeeDetails = () => {
             method: 'DELETE',
         }).then(() => {
             history.push('/employees');
+            handleAlert('warning', 'Employee profile has been deleted.', true);
         });
     }
-    
+
+    useEffect(() => {
+        setTimeout(() => {
+            handleAlert(null);
+        }, 3000);
+    });
+
     return (
         <section className="page-section">
             <h3>Profile details</h3>
-            <hr/>
-            { isLoading && <div>Loading...</div> }
-            { error && <div>{ error }</div> }
+            <hr />
+            { isLoading && <div>Loading...</div>}
+            { error && <div>{error}</div>}
             { employee && (
                 <div className="d-flex flex-row employee-details">
                     <div className="d-flex flex-column profile-img align-items-center">
                         <i className="bi bi-person-circle"></i>
                         <Link to={`/updateemployee/${employee.id}`}>
                             <button className="btn btn-outline-secondary">Update profile info</button>
-                        </Link>      
+                        </Link>
                         <button className="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete profile</button>
                         <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                             <div className="modal-dialog modal-dialog-centered">
@@ -68,6 +77,7 @@ const EmployeeDetails = () => {
                     </div>
                 </div>
             )}
+            { alert && <Alert type={alert.type} message={alert.message} /> }
         </section>
     );
 }

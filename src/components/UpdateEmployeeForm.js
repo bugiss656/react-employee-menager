@@ -1,7 +1,8 @@
 import { useForm } from "react-hook-form";
 import { useHistory } from 'react-router-dom';
 
-const UpdateEmployeeForm = ({ employee }) => {
+
+const UpdateEmployeeForm = ({ employee, handleAlert }) => {
     const history = useHistory();
     const { register, handleSubmit } = useForm({
         defaultValues: employee
@@ -17,6 +18,7 @@ const UpdateEmployeeForm = ({ employee }) => {
         }).then(() => {
             console.log('Employee profile updated...');
             history.push(`/employees/${employee.id}`);
+            handleAlert('success', 'Employee profile successfully updated.', true);
         });
     }
 

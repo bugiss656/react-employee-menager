@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-const AddEmployee = () => {
+const AddEmployee = ({ handleAlert }) => {
     const [first_name, setFirstName] = useState('');
     const [last_name, setLastName] = useState('');
     const [address, setAddress] = useState('');
@@ -31,6 +31,7 @@ const AddEmployee = () => {
         }).then(() => {
             console.log("New employee added...");
             history.push('/employees');
+            handleAlert('success', 'New employee succesfully added.', true);
         })
     }
 
@@ -150,7 +151,7 @@ const AddEmployee = () => {
                             <option value="Practice">Practice</option>
                             <option value="Internship">Internship</option>
                             <option value="1 year contract">1 year contract</option>
-                            <option value="Indefinite period conract">Indefinite period conract</option>
+                            <option value="Indefinite period contract">Indefinite period contract</option>
                         </select>
                         <label htmlFor="contract-type">Contract type</label>
                     </div>

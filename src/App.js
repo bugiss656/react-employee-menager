@@ -7,9 +7,22 @@ import UpdateEmployee from './components/UpdateEmployee';
 import Reports from './components/Reports';
 import Settings from './components/Settings';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { useState } from 'react';
 
 
 const App = () => {
+
+  const [alert, setAlert] = useState(null);
+
+  const handleAlert = (type, message, display) => {
+    setAlert({
+      type: type,
+      message: message,
+      display: display
+    });
+  }
+
+
   return (
     <Router>
       <Navbar />
@@ -18,16 +31,16 @@ const App = () => {
         <div className="main-wrapper">
           <Switch>
             <Route exact path="/employees">
-              <EmployeesList />
+              <EmployeesList alert={alert} handleAlert={handleAlert} />
             </Route>
             <Route path="/employees/:id">
-              <EmployeeDetails />
+              <EmployeeDetails alert={alert} handleAlert={handleAlert} />
             </Route>
             <Route exact path="/addemployee">
-              <AddEmployee />
+              <AddEmployee handleAlert={handleAlert} />
             </Route>
             <Route exact path="/updateemployee/:id">
-              <UpdateEmployee />
+              <UpdateEmployee handleAlert={handleAlert} />
             </Route>
             <Route exact path="/reports">
               <Reports />

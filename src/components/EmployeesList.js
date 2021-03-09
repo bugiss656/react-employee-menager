@@ -1,9 +1,17 @@
+import { useEffect } from 'react';
 import Employee from './Employee';
 import FetchData from './../hooks/FetchData';
+import Alert from './Alert';
 
 
-const EmployeesList = () => {
+const EmployeesList = ({ alert, handleAlert }) => {
     const { data: employees, isLoading, error } = FetchData('http://localhost:5000/employees');
+
+    useEffect(() => {
+        setTimeout(() => {
+            handleAlert(null);
+        }, 3000);
+    });
 
     return (
         <section className="page-section">
@@ -44,6 +52,7 @@ const EmployeesList = () => {
                     </tbody>
                 </table>
             )}
+            { alert && <Alert type={alert.type} message={alert.message} />}
         </section>
     );
 }
