@@ -4,19 +4,14 @@ import FetchData from './../hooks/FetchData';
 import Alert from './Alert';
 
 
-const EmployeesList = ({ alert, handleAlert }) => {
+const EmployeesList = ({ alert, handleHideAlert }) => {
     const { data: employees, isLoading, error } = FetchData('http://localhost:5000/employees');
 
-    useEffect(() => {
-        setTimeout(() => {
-            handleAlert(null);
-        }, 3000);
-    });
 
     return (
         <section className="page-section">
             <h3>Workers list</h3>
-            <hr/>
+            <hr />
             {isLoading && <div>Loading...</div>}
             {error && <div>{error}</div>}
             {employees && (
@@ -52,7 +47,7 @@ const EmployeesList = ({ alert, handleAlert }) => {
                     </tbody>
                 </table>
             )}
-            { alert && <Alert type={alert.type} message={alert.message} />}
+            { alert && <Alert type={alert.type} message={alert.message} handleHideAlert={handleHideAlert} />}
         </section>
     );
 }

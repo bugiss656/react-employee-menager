@@ -3,7 +3,8 @@
 const Reports = () => {
     return (
         <div className="page-section">
-            <h1>Reports</h1>
+            <h3>Reports</h3>
+            <hr/>
         </div>
     );
 }

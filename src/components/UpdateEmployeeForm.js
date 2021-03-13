@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { useHistory } from 'react-router-dom';
 
 
-const UpdateEmployeeForm = ({ employee, handleAlert }) => {
+const UpdateEmployeeForm = ({ employee, handleDisplayAlert }) => {
     const history = useHistory();
     const { register, handleSubmit } = useForm({
         defaultValues: employee
@@ -18,7 +18,7 @@ const UpdateEmployeeForm = ({ employee, handleAlert }) => {
         }).then(() => {
             console.log('Employee profile updated...');
             history.push(`/employees/${employee.id}`);
-            handleAlert('success', 'Employee profile successfully updated.', true);
+            handleDisplayAlert('success', 'Employee profile successfully updated.', true);
         });
     }
 
@@ -137,10 +137,41 @@ const UpdateEmployeeForm = ({ employee, handleAlert }) => {
                             <option value=""></option>
                             <option value="Practice">Practice</option>
                             <option value="Internship">Internship</option>
-                            <option value="1 year contract">1 year contract</option>
-                            <option value="Indefinite period contract">Indefinite period conract</option>
+                            <option value="Employment contract">Employment contract</option>
+                            <option value="Mandatory contract">Mandatory contract</option>
+                            <option value="Business-to-business">Business-to-business</option>
                         </select>
                         <label htmlFor="contract-type">Contract type</label>
+                    </div>
+                    <div className="col-md-3 form-floating">
+                        <select
+                            ref={register}
+                            name="contract_length"
+                            id="contract-length"
+                            className="form-select"
+                            placeholder="Contract length"
+                        >
+                            <option value=""></option>
+                            <option value="1 month">1 month</option>
+                            <option value="2 months">2 months</option>
+                            <option value="3 months">3 months</option>
+                            <option value="1 year contract">1 year contract</option>
+                            <option value="Indefinite period contract">Indefinite period contract</option>
+                        </select>
+                        <label htmlFor="contract-type">Contract length</label>
+                    </div>
+                </div>
+                <div className="row g-2 mb-3">
+                    <div className="col-md-3 form-floating">
+                        <input
+                            ref={register}
+                            type="number"
+                            name="salary"
+                            required
+                            className="form-control"
+                            id="salary"
+                            placeholder="Salary" />
+                        <label htmlFor="salary">Salary ($)</label>
                     </div>
                 </div>
                 <button className="btn btn-outline-success">Update profile</button>

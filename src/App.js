@@ -11,17 +11,23 @@ import { useState } from 'react';
 
 
 const App = () => {
-
   const [alert, setAlert] = useState(null);
 
-  const handleAlert = (type, message, display) => {
+  const handleDisplayAlert = (type, message, display) => {
     setAlert({
       type: type,
       message: message,
       display: display
     });
+
+    setTimeout(() => {
+      setAlert(null);
+    }, 3000);
   }
 
+  const handleHideAlert = () => {
+    setAlert(null);
+  }
 
   return (
     <Router>
@@ -31,16 +37,16 @@ const App = () => {
         <div className="main-wrapper">
           <Switch>
             <Route exact path="/employees">
-              <EmployeesList alert={alert} handleAlert={handleAlert} />
+              <EmployeesList alert={alert} handleDisplayAlert={handleDisplayAlert} handleHideAlert={handleHideAlert} />
             </Route>
             <Route path="/employees/:id">
-              <EmployeeDetails alert={alert} handleAlert={handleAlert} />
+              <EmployeeDetails alert={alert} handleDisplayAlert={handleDisplayAlert} handleHideAlert={handleHideAlert} />
             </Route>
             <Route exact path="/addemployee">
-              <AddEmployee handleAlert={handleAlert} />
+              <AddEmployee handleDisplayAlert={handleDisplayAlert} />
             </Route>
             <Route exact path="/updateemployee/:id">
-              <UpdateEmployee handleAlert={handleAlert} />
+              <UpdateEmployee handleDisplayAlert={handleDisplayAlert} />
             </Route>
             <Route exact path="/reports">
               <Reports />

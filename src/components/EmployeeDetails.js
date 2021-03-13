@@ -4,7 +4,7 @@ import FetchData from './../hooks/FetchData';
 import Alert from './Alert';
 
 
-const EmployeeDetails = ({ alert, handleAlert }) => {
+const EmployeeDetails = ({ alert, handleDisplayAlert, handleHideAlert }) => {
     const { id } = useParams();
     const { data: employee, isLoading, error } = FetchData(`http://localhost:5000/employees/${id}`);
     const history = useHistory();
@@ -14,15 +14,9 @@ const EmployeeDetails = ({ alert, handleAlert }) => {
             method: 'DELETE',
         }).then(() => {
             history.push('/employees');
-            handleAlert('warning', 'Employee profile has been deleted.', true);
+            handleDisplayAlert('warning', 'Employee profile has been deleted.', true);
         });
     }
-
-    useEffect(() => {
-        setTimeout(() => {
-            handleAlert(null);
-        }, 3000);
-    });
 
     return (
         <section className="page-section">
@@ -46,11 +40,11 @@ const EmployeeDetails = ({ alert, handleAlert }) => {
                                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div className="modal-body">
-                                        <p>Are you sure you want to delete <b>{`${employee.first_name} ${employee.last_name}`}</b> employee?</p>
+                                        <p>Are you sure you want to delete the following employee: <b>{`${employee.first_name} ${employee.last_name}`}</b>?</p>
                                     </div>
                                     <div className="modal-footer">
-                                        <button onClick={deleteEmployee} type="button" className="btn btn-danger" data-bs-dismiss="modal">Delete</button>
-                                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button onClick={deleteEmployee} type="button" className="btn btn-outline-danger" data-bs-dismiss="modal">Delete</button>
+                                        <button type="button" className="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
                                     </div>
                                 </div>
                             </div>
@@ -72,12 +66,13 @@ const EmployeeDetails = ({ alert, handleAlert }) => {
                             <li className="list-group-item"><b>Position: </b>{employee.position}</li>
                             <li className="list-group-item"><b>Employment date: </b>{employee.employment_date}</li>
                             <li className="list-group-item"><b>Contract type: </b>{employee.contract_type}</li>
-                            <li className="list-group-item"><b>Seniority: </b>{employee.seniority} years</li>
+                            <li className="list-group-item"><b>Contract length: </b>{employee.contract_length}</li>
+                            <li className="list-group-item"><b>Salary: </b>{employee.salary} $</li>
                         </ul>
                     </div>
                 </div>
             )}
-            { alert && <Alert type={alert.type} message={alert.message} /> }
+            { alert && <Alert type={alert.type} message={alert.message} handleHideAlert={handleHideAlert} />}
         </section>
     );
 }
