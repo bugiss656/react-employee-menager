@@ -9,6 +9,8 @@
       "position": "Accountant",
       "employment_date": "2021-03-10",
       "contract_type": "Practice",
+      "contract_length": "1 month",
+      "salary": "1000",
       "id": 1
     },
     {
@@ -20,7 +22,8 @@
       "position": "Accountant",
       "employment_date": "2021-04-11",
       "contract_type": "Internship",
-      "salary": "800",
+      "contract_length": "3 months",
+      "salary": "1200",
       "id": 2
     },
     {
@@ -31,9 +34,24 @@
       "email": "tony@mail.com",
       "position": "Accountant",
       "employment_date": "2021-03-15",
-      "contract_type": "Indefinite period contract",
+      "contract_type": "Employment contract",
+      "contract_length": "1 year contract",
       "salary": "2000",
       "id": 3
+    },
+    {
+      "first_name": "Elisa",
+      "last_name": "Steamer",
+      "address": "12 Avenue",
+      "phone_nr": "333555696",
+      "email": "elisa@mail.com",
+      "position": "Dealer",
+      "employment_date": "2021-03-01",
+      "contract_type": "Mandatory contract",
+      "contract_length": "1 year contract",
+      "salary": "1200",
+      "leave_days": "15",
+      "id": 4
     }
   ]
 }

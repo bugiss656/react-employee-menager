@@ -173,6 +173,19 @@ const UpdateEmployeeForm = ({ employee, handleDisplayAlert }) => {
                             placeholder="Salary" />
                         <label htmlFor="salary">Salary ($)</label>
                     </div>
+                    <div className="col-md-3 form-floating">
+                        <input
+                            ref={register}
+                            type="number"
+                            min="0"
+                            max={employee.leave_days}
+                            name="leave_days"
+                            required
+                            className="form-control"
+                            id="leave-days"
+                            placeholder="Available leave days" />
+                        <label htmlFor="leave-days">Available leave days</label>
+                    </div>
                 </div>
                 <button className="btn btn-outline-success">Update profile</button>
             </form>

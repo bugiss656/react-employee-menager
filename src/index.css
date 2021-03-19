@@ -61,17 +61,9 @@ code {
   width: 100%;
 }
 
-.employee-table {
-  
-}
-
 .employee-table thead {
   color: #808080;
   background-color: #f8f9fa;
-}
-
-.employee-details {
-
 }
 
 .profile-img, .profile-general-info, .profile-work-info {
@@ -85,5 +77,10 @@ code {
 
 .profile-info {
   border-left: 1px solid #fff;
+}
+
+.chart-wrapper {
+  width: 500px;
+  height: 250px;
 }
 

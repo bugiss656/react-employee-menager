@@ -12,6 +12,7 @@ const AddEmployee = ({ handleDisplayAlert }) => {
     const [contract_type, setContractType] = useState('');
     const [contract_length, setContractLength] = useState('');
     const [salary, setSalary] = useState('');
+    const [leave_days, setLeaveDays] = useState('');
     const history = useHistory();
 
 
@@ -29,6 +30,7 @@ const AddEmployee = ({ handleDisplayAlert }) => {
             contract_type,
             contract_length,
             salary,
+            leave_days
         };
 
         fetch('http://localhost:5000/employees', {
@@ -193,6 +195,21 @@ const AddEmployee = ({ handleDisplayAlert }) => {
                             placeholder="Salary"
                         />
                         <label htmlFor="salary">Salary ($)</label>
+                    </div>
+                    <div className="col-md-3 form-floating">
+                        <select
+                            onChange={(e) => setLeaveDays(e.target.value)}
+                            value={leave_days}
+                            id="leave-days"
+                            className="form-select"
+                            placeholder="Leave days"
+                        >
+                            <option value=""></option>
+                            <option value="0">No leave available</option>
+                            <option value="20">20 days</option>
+                            <option value="26">26 days</option>
+                        </select>
+                        <label htmlFor="leave-days">Available leave days</label>
                     </div>
                 </div>
                 <button className="btn btn-outline-success">Add employee</button>
