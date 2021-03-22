@@ -173,19 +173,37 @@ const UpdateEmployeeForm = ({ employee, handleDisplayAlert }) => {
                             placeholder="Salary" />
                         <label htmlFor="salary">Salary ($)</label>
                     </div>
-                    <div className="col-md-3 form-floating">
-                        <input
-                            ref={register}
-                            type="number"
-                            min="0"
-                            max={employee.leave_days}
-                            name="leave_days"
-                            required
-                            className="form-control"
-                            id="leave-days"
-                            placeholder="Available leave days" />
-                        <label htmlFor="leave-days">Available leave days</label>
-                    </div>
+
+                    {employee.leave_days
+                        ?   <div className="col-md-3 form-floating">
+                                <input
+                                    ref={register}
+                                    type="number"
+                                    min="0"
+                                    max={employee.leave_days}
+                                    name="leave_days"
+                                    required
+                                    className="form-control"
+                                    id="leave-days"
+                                    placeholder="Available leave days" />
+                                <label htmlFor="leave-days">Available leave days</label>
+                            </div>
+                        :   <div className="col-md-3 form-floating">
+                                <select
+                                    ref={register}
+                                    name="leave_days"
+                                    id="leave-days"
+                                    className="form-select"
+                                    placeholder="Leave days"
+                                >
+                                    <option value=""></option>
+                                    <option value="0">No leave available</option>
+                                    <option value="20">20 days</option>
+                                    <option value="26">26 days</option>
+                                </select>
+                                <label htmlFor="leave-days">Available leave days</label>
+                            </div>
+                    }
                 </div>
                 <button className="btn btn-outline-success">Update profile</button>
             </form>

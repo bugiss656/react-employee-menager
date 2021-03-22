@@ -11,6 +11,7 @@
       "contract_type": "Practice",
       "contract_length": "1 month",
       "salary": "1000",
+      "leave_days": "20",
       "id": 1
     },
     {
@@ -21,9 +22,10 @@
       "email": "michael@mail.com",
       "position": "Accountant",
       "employment_date": "2021-04-11",
-      "contract_type": "Internship",
+      "contract_type": "Employment contract",
       "contract_length": "3 months",
       "salary": "1200",
+      "leave_days": "26",
       "id": 2
     },
     {
@@ -37,6 +39,7 @@
       "contract_type": "Employment contract",
       "contract_length": "1 year contract",
       "salary": "2000",
+      "leave_days": "20",
       "id": 3
     },
     {
