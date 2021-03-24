@@ -67,6 +67,14 @@ code {
   background-color: #f8f9fa;
 }
 
+.employee-profile-link {
+  color: #000000;
+}
+
+.employee-profile-link:hover {
+  color: #000000;
+}
+
 .profile-img, .profile-general-info, .profile-work-info {
   margin: 0 25px 0 25px;
 }
@@ -85,3 +93,50 @@ code {
   height: 250px;
 }
 
+.bi-toggle-off, .bi-toggle-on {
+  font-size: 36px;
+}
+
+.bi-brightness-high, .bi-moon-fill {
+  font-size: 20px;
+  margin: 0 6px;
+  padding: 8px 0;
+}
+
+/* THEME CLASSES */
+
+.body-light-theme {
+  background-color: #fff;
+  color: #000000;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar-light-theme {
+  background-color: #f8f9fa;
+  color: #000000;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar-light-theme {
+  background-color: #fff;
+  color: #000000;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.body-dark-theme {
+  background-color: #37404a;
+  color: #fff;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar-dark-theme {
+  background-color: #343a40;
+  color: #fff;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar-dark-theme {
+  background-color: #37404a;
+  color: #fff;
+  transition: background-color 0.3s, color 0.3s;
+}

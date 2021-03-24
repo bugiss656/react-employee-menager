@@ -8,9 +8,9 @@
       "email": "rowley@mail.com",
       "position": "Accountant",
       "employment_date": "2021-03-10",
-      "contract_type": "Practice",
+      "contract_type": "Employment contract",
       "contract_length": "1 month",
-      "salary": "1000",
+      "salary": "1200",
       "leave_days": "20",
       "id": 1
     },

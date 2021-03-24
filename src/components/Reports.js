@@ -129,7 +129,7 @@ const Reports = () => {
             </div>
             <div className="row justify-content-center">
                 <div className="col-md-8">
-                    <h5 className="lead">Employees by by available leave days</h5>
+                    <h5 className="lead">Employees by available leave days</h5>
                     <Bar data={leaveDaysChartData} options={leaveDaysChartOptions} />
                 </div>
             </div>
