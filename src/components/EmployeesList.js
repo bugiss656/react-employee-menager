@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import Employee from './Employee';
 import FetchData from './../hooks/FetchData';
 import Alert from './Alert';

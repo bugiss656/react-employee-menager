@@ -8,13 +8,11 @@ import Reports from './components/Reports';
 import Settings from './components/Settings';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import {  global_light_theme,
-          sidebar_light_theme,
-          global_dark_theme,
-          sidebar_dark_theme } from './themes/themes';
+
 
 
 const App = () => {
+  
   if(!localStorage.getItem('theme')) {
     localStorage.setItem('theme', '');
   }
@@ -53,9 +51,9 @@ const App = () => {
   return (
     <div className="App">
       <Router>
-        <Navbar />
+        <Navbar colorTheme={colorTheme} />
         <div className="d-flex flex-row">
-          <Sidebar />
+          <Sidebar colorTheme={colorTheme} />
           <div className="main-wrapper">
             <Switch>
               <Route exact path="/employees">

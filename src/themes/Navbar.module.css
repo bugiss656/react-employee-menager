@@ -1,0 +1,29 @@
+.navbarLight {
+    background-color: #ffffff !important;
+    color: #000000;
+    border-bottom: 1px solid #e6e6e6;
+    transition: background-color 0.2s, color 0.2s, border-bottom 0.2s;
+}
+
+.navbarLight_link {
+    color: #000000;
+}
+
+.navbarLight_link:hover {
+    color: #000000;
+}
+
+.navbarDark {
+    background-color: #37404a !important;
+    color: #ffffff !important;
+    border-bottom: 1px solid #2b313b;
+    transition: background-color 0.2s, color 0.2s, border-bottom 0.2s;
+}
+
+.navbarDark_link {
+    color: #ffffff;
+}
+
+.navbarDark_link:hover {
+    color: #ffffff;
+}

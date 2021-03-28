@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
+import styles from '../themes/Navbar.module.css';
 
-const Navbar = () => {
+const Navbar = ({ colorTheme }) => {
     return (
-        <div className="navbar navbar-light bg-light sticky-top">
-            <Link to="/" className="navbar-brand col-md-3 col-lg-2 px-2">
+        <div className={colorTheme === 'dark' ? `navbar ${styles.navbarDark} sticky-top`  : `navbar ${styles.navbarLight} sticky-top`}>
+            <Link to="/" className={colorTheme === 'dark' ? `navbar-brand ${styles.navbarDark_link} col-md-3 px-2` : `navbar-brand ${styles.navbarLight_link} col-md-3 px-2`}>
                 <i className="bi bi-journals px-1"></i>
                 EmployeeMenager
             </Link>   
