@@ -8,6 +8,8 @@
 }
 
 .navlinkLight {
+    font-size: 15px;
+    font-weight: 500;
     color: #000000;
     transition: color 0.2s;
 }
@@ -26,6 +28,8 @@
 }
 
 .navlinkDark {
+    font-size: 15px;
+    font-weight: 500;
     color: #ffffff;
     transition: color 0.2s;
 }
@@ -37,13 +41,3 @@
 ul {
     margin-top: 20px;
 }
-
-.nav-item {
-    font-size: 15px;
-    font-weight: 500;
-}
-
-i {
-    font-size: 16px;
-}
-

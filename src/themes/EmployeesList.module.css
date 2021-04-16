@@ -1,0 +1,47 @@
+.title_light {
+    color: #000000;
+}
+
+.tableHeader_light {
+    background-color: #f8f9fa;
+    color: #808080;
+}
+
+.tableBody-light {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.tableBody_light a {
+    color: #000000;
+}
+
+.tableBody_light a:hover {
+    color: #000000;
+}
+
+.title_dark {
+    color: #ffffff;
+}
+
+.tableHeader_dark {
+    background-color: #2b313b !important;
+    color: #ffffff !important;
+}
+
+.tableBody_dark {
+    background-color: #37404a;
+    color: #ffffff;
+}
+
+.tableBody_dark tr:hover {
+    color: #ffffff !important;
+}
+
+.tableBody_dark a {
+    color: #ffffff;
+}
+
+.tableBody_dark a:hover {
+    color: #ffffff;
+}

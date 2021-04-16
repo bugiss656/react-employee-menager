@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 
+
 const Employee = ({ id, first_name, last_name, position, address, phone_nr }) => {
     return (
         <tr>
@@ -10,7 +11,7 @@ const Employee = ({ id, first_name, last_name, position, address, phone_nr }) =>
             <td>{address}</td>
             <td>{phone_nr}</td>
             <td>
-                <Link to={`/employees/${id}`} className="employee-profile-link">
+                <Link to={`/employees/${id}`}>
                     <i className="bi bi-file-earmark-person"></i>
                 </Link>
             </td>

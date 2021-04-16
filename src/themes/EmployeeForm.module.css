@@ -1,0 +1,33 @@
+.title_light {
+    color: #000000 !important;
+}
+
+.input_light {
+    background-color: #ffffff;
+    color: #000000 !important;
+}
+
+.input_light:focus {
+    background-color: #ffffff;
+}
+
+.label_light {
+    color: #000000 !important;
+}
+
+.title_dark {
+    color: #ffffff !important;
+}
+
+.input_dark {
+    background-color: #343a40;
+    color: #ffffff !important;
+}
+
+.input_dark:focus {
+    background-color: #343a40;
+}
+
+.label_dark {
+    color: #ffffff !important;
+}

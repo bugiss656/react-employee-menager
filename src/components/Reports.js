@@ -1,15 +1,26 @@
 import { useState, useEffect } from 'react';
 import { Bar } from 'react-chartjs-2';
+import { defaults } from 'react-chartjs-2';
+import styles from '../themes/Reports.module.css';
 
 
 
-const Reports = () => {
+const Reports = ({ colorTheme }) => {
     const [salaryChartData, setSalaryChartData] = useState({});
     const [salaryChartOptions, setSalaryChartOptions] = useState({});
 
     const [leaveDaysChartData, setleaveDaysChartData] = useState({});
     const [leaveDaysChartOptions, setLeaveDaysChartOptions] = useState({});
     
+
+    const setChartFontColor = () => {
+        const chart_font_color = colorTheme === 'dark' ? 
+            defaults.global.defaultFontColor = '#ffffff' : 
+            defaults.global.defaultFontColor = '#000000';
+
+        return chart_font_color;
+    }
+
 
     const handleEmployeesSalaryChart = () => {
         const results = [];
@@ -112,30 +123,26 @@ const Reports = () => {
 
 
     useEffect(() => {
+        setChartFontColor();
         handleEmployeesSalaryChart();
         handleEmployeesLeaveDaysChart();
     }, []);
 
 
     return (
-        <div className="page-section">
+        <div className={ colorTheme === "dark" ? `page-section ${styles.title_dark}` : `page-section ${styles.title_light}` }>
             <h3>Reports</h3>
             <hr />
-            <div className="row justify-content-center">
+            <div className={`row justify-content-center ${styles.chart_container}`}>
                 <div className="col-md-8">
                     <h5 className="lead">Employees by month salary</h5>
                     <Bar data={salaryChartData} options={salaryChartOptions} />
                 </div>
             </div>
-            <div className="row justify-content-center">
+            <div className={`row justify-content-center ${styles.chart_container}`}>
                 <div className="col-md-8">
                     <h5 className="lead">Employees by available leave days</h5>
                     <Bar data={leaveDaysChartData} options={leaveDaysChartOptions} />
-                </div>
-            </div>
-            <div className="row justify-content-center">
-                <div className="col-md-8">
-                    
                 </div>
             </div>
         </div>

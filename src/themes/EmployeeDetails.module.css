@@ -1,0 +1,26 @@
+.profile_img, .profile_general_info, .profile_work_info {
+    margin: 0 25px 0 25px;
+}
+
+.profile_img i {
+    color: #e6e6e6;
+    font-size: 140px;
+}
+
+.title_light {
+    color: #000000;
+}
+
+.list_group_light {
+    color: #000000 !important;
+    background-color: #ffffff !important;
+}
+
+.title_dark {
+    color: #ffffff;
+}
+
+.list_group_dark {
+    color: #ffffff !important;
+    background-color: #37404a !important;
+}

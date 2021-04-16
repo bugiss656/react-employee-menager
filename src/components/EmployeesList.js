@@ -1,21 +1,22 @@
 import Employee from './Employee';
 import FetchData from './../hooks/FetchData';
 import Alert from './Alert';
+import styles from '../themes/EmployeesList.module.css';
 
 
-const EmployeesList = ({ alert, handleHideAlert }) => {
+const EmployeesList = ({ colorTheme, alert, handleHideAlert }) => {
     const { data: employees, isLoading, error } = FetchData('http://localhost:5000/employees');
 
 
     return (
         <section className="page-section">
-            <h3>Workers list</h3>
+            <h3 className={ colorTheme === "dark" ? `${styles.title_dark}` : `${styles.title_light}` }>Workers list</h3>
             <hr />
             {isLoading && <div>Loading...</div>}
             {error && <div>{error}</div>}
             {employees && (
                 <table className="table table-hover employee-table">
-                    <thead>
+                    <thead className={ colorTheme === 'dark' ? styles.tableHeader_dark : styles.tableHeader_light }>
                         <tr>
                             <th>ID</th>
                             <th>First name</th>
@@ -26,9 +27,9 @@ const EmployeesList = ({ alert, handleHideAlert }) => {
                             <th>Details</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className={ colorTheme === 'dark' ? styles.tableBody_dark : styles.tableBody_light }>
                         {employees.map(employee => (
-                            <Employee
+                            <Employee 
                                 key={employee.id}
                                 id={employee.id}
                                 first_name={employee.first_name}
@@ -46,7 +47,7 @@ const EmployeesList = ({ alert, handleHideAlert }) => {
                     </tbody>
                 </table>
             )}
-            { alert && <Alert type={alert.type} message={alert.message} handleHideAlert={handleHideAlert} />}
+            {alert && <Alert type={alert.type} message={alert.message} handleHideAlert={handleHideAlert} />}
         </section>
     );
 }

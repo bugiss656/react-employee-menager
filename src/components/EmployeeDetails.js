@@ -1,12 +1,15 @@
 import { Link, useParams, useHistory } from 'react-router-dom';
 import FetchData from './../hooks/FetchData';
 import Alert from './Alert';
+import styles from '../themes/EmployeeDetails.module.css';
 
 
-const EmployeeDetails = ({ alert, handleDisplayAlert, handleHideAlert }) => {
+const EmployeeDetails = ({ colorTheme, alert, handleDisplayAlert, handleHideAlert }) => {
     const { id } = useParams();
     const { data: employee, isLoading, error } = FetchData(`http://localhost:5000/employees/${id}`);
     const history = useHistory();
+
+    const list_item = colorTheme === 'dark' ? `list-group list-group-flush ${styles.list_group_dark}` : `list-group list-group-flush ${styles.list_group_light}`;
 
     const deleteEmployee = () => {
         fetch(`http://localhost:5000/employees/${employee.id}`, {
@@ -18,7 +21,7 @@ const EmployeeDetails = ({ alert, handleDisplayAlert, handleHideAlert }) => {
     }
 
     return (
-        <section className="page-section">
+        <section className={ colorTheme === "dark" ? `page-section ${styles.title_dark}` : `page-section ${styles.title_light}` }>
             <h3>Profile details</h3>
             <hr />
             { isLoading && <div>Loading...</div>}
@@ -26,7 +29,7 @@ const EmployeeDetails = ({ alert, handleDisplayAlert, handleHideAlert }) => {
             { employee && (
                 <>
                     <div className="d-flex flex-row employee-details">
-                        <div className="d-flex flex-column profile-img align-items-center">
+                        <div className={`d-flex flex-column ${styles.profile_img} align-items-center`}>
                             <i className="bi bi-person-circle"></i>
                             <Link to={`/updateemployee/${employee.id}`}>
                                 <button className="btn btn-outline-secondary">Update profile info</button>
@@ -50,25 +53,25 @@ const EmployeeDetails = ({ alert, handleDisplayAlert, handleHideAlert }) => {
                                 </div>
                             </div>
                         </div>
-                        <div className="profile-general-info">
+                        <div className={`${styles.profile_general_info}`}>
                             <h5>General informations:</h5>
                             <ul className="list-group list-group-flush">
-                                <li className="list-group-item"><b>First name: </b>{employee.first_name}</li>
-                                <li className="list-group-item"><b>Last name: </b>{employee.last_name}</li>
-                                <li className="list-group-item"><b>Address: </b>{employee.address}</li>
-                                <li className="list-group-item"><b>Phone number: </b>{employee.phone_nr}</li>
-                                <li className="list-group-item"><b>Email: </b>{employee.email}</li>
+                                <li className={`list-group-item ${list_item}`}><b>First name: </b>{employee.first_name}</li>
+                                <li className={`list-group-item ${list_item}`}><b>Last name: </b>{employee.last_name}</li>
+                                <li className={`list-group-item ${list_item}`}><b>Address: </b>{employee.address}</li>
+                                <li className={`list-group-item ${list_item}`}><b>Phone number: </b>{employee.phone_nr}</li>
+                                <li className={`list-group-item ${list_item}`}><b>Email: </b>{employee.email}</li>
                             </ul>
                         </div>
-                        <div className="profile-work-info">
+                        <div className={`${styles.profile_work_info}`}>
                             <h5>Work informations:</h5>
                             <ul className="list-group list-group-flush">
-                                <li className="list-group-item"><b>Position: </b>{employee.position}</li>
-                                <li className="list-group-item"><b>Employment date: </b>{employee.employment_date}</li>
-                                <li className="list-group-item"><b>Contract type: </b>{employee.contract_type}</li>
-                                <li className="list-group-item"><b>Contract length: </b>{employee.contract_length}</li>
-                                <li className="list-group-item"><b>Salary (monthly): </b>{employee.salary} $</li>
-                                <li className="list-group-item"><b>Available leave: </b>{employee.leave_days} days</li>
+                                <li className={`list-group-item ${list_item}`}><b>Position: </b>{employee.position}</li>
+                                <li className={`list-group-item ${list_item}`}><b>Employment date: </b>{employee.employment_date}</li>
+                                <li className={`list-group-item ${list_item}`}><b>Contract type: </b>{employee.contract_type}</li>
+                                <li className={`list-group-item ${list_item}`}><b>Contract length: </b>{employee.contract_length}</li>
+                                <li className={`list-group-item ${list_item}`}><b>Salary (monthly): </b>{employee.salary} $</li>
+                                <li className={`list-group-item ${list_item}`}><b>Available leave: </b>{employee.leave_days} days</li>
                             </ul>
                         </div>
                     </div>

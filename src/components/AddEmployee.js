@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import styles from '../themes/EmployeeForm.module.css';
 
-const AddEmployee = ({ handleDisplayAlert }) => {
+const AddEmployee = ({ colorTheme, handleDisplayAlert }) => {
     const [first_name, setFirstName] = useState('');
     const [last_name, setLastName] = useState('');
     const [address, setAddress] = useState('');
@@ -45,7 +46,7 @@ const AddEmployee = ({ handleDisplayAlert }) => {
     }
 
     return (
-        <section className="page-section">
+        <section className={ colorTheme === "dark" ? `page-section ${styles.title_dark}` : `page-section ${styles.title_light}` }>
             <h3>Add worker</h3>
             <hr />
             <form onSubmit={handleSubmit}>
@@ -57,11 +58,11 @@ const AddEmployee = ({ handleDisplayAlert }) => {
                             value={first_name}
                             required
                             type="text"
-                            className="form-control"
+                            className={ colorTheme === 'dark' ? `form-control ${styles.input_dark}` : `form-control ${styles.input_light}` }
                             id="first-name"
                             placeholder="First name"
                         />
-                        <label htmlFor="first-name">First name</label>
+                        <label htmlFor="first-name" className={ colorTheme === 'dark' ? `${styles.label_dark}` : `${styles.label_light}` }>First name</label>
                     </div>
                     <div className="col-md-3 form-floating">
                         <input
@@ -69,11 +70,11 @@ const AddEmployee = ({ handleDisplayAlert }) => {
                             value={last_name}
                             required
                             type="text"
-                            className="form-control"
+                            className={ colorTheme === 'dark' ? `form-control ${styles.input_dark}` : `form-control ${styles.input_light}` }
                             id="last-name"
                             placeholder="Last name"
                         />
-                        <label htmlFor="last-name">Last name</label>
+                        <label htmlFor="last-name" className={ colorTheme === 'dark' ? `${styles.label_dark}` : `${styles.label_light}` }>Last name</label>
                     </div>
                 </div>
                 <div className="row g-2 mb-3">
@@ -83,11 +84,11 @@ const AddEmployee = ({ handleDisplayAlert }) => {
                             value={address}
                             required
                             type="text"
-                            className="form-control"
+                            className={ colorTheme === 'dark' ? `form-control ${styles.input_dark}` : `form-control ${styles.input_light}` }
                             id="address"
                             placeholder="Address"
                         />
-                        <label htmlFor="address">Address</label>
+                        <label htmlFor="address" className={ colorTheme === 'dark' ? `${styles.label_dark}` : `${styles.label_light}` }>Address</label>
                     </div>
                     <div className="col-md-3 form-floating">
                         <input
@@ -95,11 +96,11 @@ const AddEmployee = ({ handleDisplayAlert }) => {
                             value={phone_nr}
                             required
                             type="text"
-                            className="form-control"
+                            className={ colorTheme === 'dark' ? `form-control ${styles.input_dark}` : `form-control ${styles.input_light}` }
                             id="phone-nr"
                             placeholder="Phone number"
                         />
-                        <label htmlFor="phone-nr">Phone number</label>
+                        <label htmlFor="phone-nr" className={ colorTheme === 'dark' ? `${styles.label_dark}` : `${styles.label_light}` }>Phone number</label>
                     </div>
                 </div>
                 <div className="row g-2 mb-3">
@@ -109,11 +110,11 @@ const AddEmployee = ({ handleDisplayAlert }) => {
                             value={email}
                             required
                             type="email"
-                            className="form-control"
+                            className={ colorTheme === 'dark' ? `form-control ${styles.input_dark}` : `form-control ${styles.input_light}` }
                             id="email"
                             placeholder="Email"
                         />
-                        <label htmlFor="email">Email</label>
+                        <label htmlFor="email" className={ colorTheme === 'dark' ? `${styles.label_dark}` : `${styles.label_light}` }>Email</label>
                     </div>
                 </div>
 
@@ -124,7 +125,7 @@ const AddEmployee = ({ handleDisplayAlert }) => {
                             onChange={(e) => setPosition(e.target.value)}
                             value={position}
                             id="position"
-                            className="form-select"
+                            className={ colorTheme === 'dark' ? `form-select ${styles.input_dark}` : `form-select ${styles.input_light}` }
                             placeholder="Position"
                         >
                             <option value=""></option>
@@ -134,17 +135,17 @@ const AddEmployee = ({ handleDisplayAlert }) => {
                             <option value="Warehouseman">Warehouseman</option>
                             <option value="Customer service">Customer service</option>
                         </select>
-                        <label htmlFor="position">Position</label>
+                        <label htmlFor="position" className={ colorTheme === 'dark' ? `${styles.label_dark}` : `${styles.label_light}` }>Position</label>
                     </div>
                     <div className="col-md-3 form-floating">
                         <input
                             onChange={(e) => setEmploymentDate(e.target.value)}
                             value={employment_date}
                             type="date"
-                            className="form-control"
+                            className={ colorTheme === 'dark' ? `form-control ${styles.input_dark}` : `form-control ${styles.input_light}` }
                             id="employment-date"
                             placeholder="Date of employment" />
-                        <label htmlFor="employment-date">Date of employment</label>
+                        <label htmlFor="employment-date" className={ colorTheme === 'dark' ? `${styles.label_dark}` : `${styles.label_light}` }>Date of employment</label>
                     </div>
                 </div>
                 <div className="row g-2 mb-3">
@@ -153,7 +154,7 @@ const AddEmployee = ({ handleDisplayAlert }) => {
                             onChange={(e) => setContractType(e.target.value)}
                             value={contract_type}
                             id="contract-type"
-                            className="form-select"
+                            className={ colorTheme === 'dark' ? `form-select ${styles.input_dark}` : `form-select ${styles.input_light}` }
                             placeholder="Contract type"
                         >
                             <option value=""></option>
@@ -163,14 +164,14 @@ const AddEmployee = ({ handleDisplayAlert }) => {
                             <option value="Mandatory contract">Mandatory contract</option>
                             <option value="Business-to-business">Business-to-business</option>
                         </select>
-                        <label htmlFor="contract-type">Contract type</label>
+                        <label htmlFor="contract-type" className={ colorTheme === 'dark' ? `${styles.label_dark}` : `${styles.label_light}` }>Contract type</label>
                     </div>
                     <div className="col-md-3 form-floating">
                         <select
                             onChange={(e) => setContractLength(e.target.value)}
                             value={contract_length}
                             id="contract-length"
-                            className="form-select"
+                            className={ colorTheme === 'dark' ? `form-select ${styles.input_dark}` : `form-select ${styles.input_light}` }
                             placeholder="Contract length"
                         >
                             <option value=""></option>
@@ -180,7 +181,7 @@ const AddEmployee = ({ handleDisplayAlert }) => {
                             <option value="1 year contract">1 year contract</option>
                             <option value="Indefinite period contract">Indefinite period contract</option>
                         </select>
-                        <label htmlFor="contract-length">Contract length</label>
+                        <label htmlFor="contract-length" className={ colorTheme === 'dark' ? `${styles.label_dark}` : `${styles.label_light}` }>Contract length</label>
                     </div>
                 </div>
                 <div className="row g-2 mb-3">
@@ -190,18 +191,18 @@ const AddEmployee = ({ handleDisplayAlert }) => {
                             onChange={(e) => setSalary(e.target.value)}
                             value={salary}
                             required
-                            className="form-control"
+                            className={ colorTheme === 'dark' ? `form-control ${styles.input_dark}` : `form-control ${styles.input_light}` }
                             id="salary"
                             placeholder="Salary"
                         />
-                        <label htmlFor="salary">Salary ($)</label>
+                        <label htmlFor="salary" className={ colorTheme === 'dark' ? `${styles.label_dark}` : `${styles.label_light}` }>Salary ($)</label>
                     </div>
                     <div className="col-md-3 form-floating">
                         <select
                             onChange={(e) => setLeaveDays(e.target.value)}
                             value={leave_days}
                             id="leave-days"
-                            className="form-select"
+                            className={ colorTheme === 'dark' ? `form-select ${styles.input_dark}` : `form-select ${styles.input_light}` }
                             placeholder="Leave days"
                         >
                             <option value=""></option>
@@ -209,7 +210,7 @@ const AddEmployee = ({ handleDisplayAlert }) => {
                             <option value="20">20 days</option>
                             <option value="26">26 days</option>
                         </select>
-                        <label htmlFor="leave-days">Available leave days</label>
+                        <label htmlFor="leave-days" className={ colorTheme === 'dark' ? `${styles.label_dark}` : `${styles.label_light}` }>Available leave days</label>
                     </div>
                 </div>
                 <button className="btn btn-outline-success">Add employee</button>

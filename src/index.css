@@ -18,35 +18,6 @@ code {
     monospace;
 }
 
-.sidebar {
-  position: fixed;
-  width: 250px;
-  height: 100%;
-  background-color: #f8f9fa;
-  border-right: 1px solid #e6e6e6;
-}
-
-.sidebar ul {
-  margin-top: 20px;
-}
-
-.nav-item {
-  font-size: 15px;
-  font-weight: 500;
-}
-
-.nav-item i {
-  font-size: 16px;
-}
-
-.nav-link {
-  color: #000000;
-}
-
-.nav-link:hover {
-  color: #808080;
-}
-
 .main-wrapper {
   margin-left: 250px;
   width: 100%;
@@ -55,32 +26,6 @@ code {
 .page-section {
   padding: 20px;
   width: 100%;
-}
-
-.employee-table thead {
-  color: #808080;
-  background-color: #f8f9fa;
-}
-
-.employee-profile-link {
-  color: #000000;
-}
-
-.employee-profile-link:hover {
-  color: #000000;
-}
-
-.profile-img, .profile-general-info, .profile-work-info {
-  margin: 0 25px 0 25px;
-}
-
-.profile-img i {
-  color: #e6e6e6;
-  font-size: 140px;
-}
-
-.profile-info {
-  border-left: 1px solid #fff;
 }
 
 .chart-wrapper {
@@ -102,7 +47,7 @@ code {
 
 .body-light-theme {
   background-color: #fff;
-  color: #000000;
+  
   transition: background-color 0.2s, color 0.2s;
 }
 
@@ -120,7 +65,7 @@ code {
 
 .body-dark-theme {
   background-color: #37404a;
-  color: #fff;
+  
   transition: background-color 0.2s, color 0.2s;
 }
 

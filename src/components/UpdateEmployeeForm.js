@@ -1,8 +1,9 @@
 import { useForm } from "react-hook-form";
 import { useHistory } from 'react-router-dom';
+import styles from '../themes/EmployeeForm.module.css';
 
 
-const UpdateEmployeeForm = ({ employee, handleDisplayAlert }) => {
+const UpdateEmployeeForm = ({ colorTheme, employee, handleDisplayAlert }) => {
     const history = useHistory();
     const { register, handleSubmit } = useForm({
         defaultValues: employee
@@ -23,7 +24,7 @@ const UpdateEmployeeForm = ({ employee, handleDisplayAlert }) => {
     }
 
     return (
-        <section className="page-section">
+        <section className={ colorTheme === "dark" ? `page-section ${styles.title_dark}` : `page-section ${styles.title_light}` }>
             <h3>Update profile details</h3>
             <hr />
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -35,7 +36,7 @@ const UpdateEmployeeForm = ({ employee, handleDisplayAlert }) => {
                             required
                             name="first_name"
                             type="text"
-                            className="form-control"
+                            className={ colorTheme === 'dark' ? `form-control ${styles.input_dark}` : `form-control ${styles.input_light}` }
                             id="first-name"
                             placeholder="First name"
                         />
@@ -47,7 +48,7 @@ const UpdateEmployeeForm = ({ employee, handleDisplayAlert }) => {
                             required
                             name="last_name"
                             type="text"
-                            className="form-control"
+                            className={ colorTheme === 'dark' ? `form-control ${styles.input_dark}` : `form-control ${styles.input_light}` }
                             id="last-name"
                             placeholder="Last name"
                         />
@@ -61,7 +62,7 @@ const UpdateEmployeeForm = ({ employee, handleDisplayAlert }) => {
                             required
                             name="address"
                             type="text"
-                            className="form-control"
+                            className={ colorTheme === 'dark' ? `form-control ${styles.input_dark}` : `form-control ${styles.input_light}` }
                             id="address"
                             placeholder="Address"
                         />
@@ -73,7 +74,7 @@ const UpdateEmployeeForm = ({ employee, handleDisplayAlert }) => {
                             required
                             name="phone_nr"
                             type="text"
-                            className="form-control"
+                            className={ colorTheme === 'dark' ? `form-control ${styles.input_dark}` : `form-control ${styles.input_light}` }
                             id="phone-nr"
                             placeholder="Phone number"
                         />
@@ -87,7 +88,7 @@ const UpdateEmployeeForm = ({ employee, handleDisplayAlert }) => {
                             required
                             name="email"
                             type="email"
-                            className="form-control"
+                            className={ colorTheme === 'dark' ? `form-control ${styles.input_dark}` : `form-control ${styles.input_light}` }
                             id="email"
                             placeholder="Email"
                         />
@@ -102,7 +103,7 @@ const UpdateEmployeeForm = ({ employee, handleDisplayAlert }) => {
                             ref={register}
                             name="position"
                             id="position"
-                            className="form-select"
+                            className={ colorTheme === 'dark' ? `form-select ${styles.input_dark}` : `form-select ${styles.input_light}` }
                             placeholder="Position"
                         >
                             <option value=""></option>
@@ -119,7 +120,7 @@ const UpdateEmployeeForm = ({ employee, handleDisplayAlert }) => {
                             ref={register}
                             type="date"
                             name="employment_date"
-                            className="form-control"
+                            className={ colorTheme === 'dark' ? `form-control ${styles.input_dark}` : `form-control ${styles.input_light}` }
                             id="employment-date"
                             placeholder="Date of employment" />
                         <label htmlFor="employment-date">Date of employment</label>
@@ -131,7 +132,7 @@ const UpdateEmployeeForm = ({ employee, handleDisplayAlert }) => {
                             ref={register}
                             name="contract_type"
                             id="contract-type"
-                            className="form-select"
+                            className={ colorTheme === 'dark' ? `form-select ${styles.input_dark}` : `form-select ${styles.input_light}` }
                             placeholder="Contract type"
                         >
                             <option value=""></option>
@@ -148,7 +149,7 @@ const UpdateEmployeeForm = ({ employee, handleDisplayAlert }) => {
                             ref={register}
                             name="contract_length"
                             id="contract-length"
-                            className="form-select"
+                            className={ colorTheme === 'dark' ? `form-select ${styles.input_dark}` : `form-select ${styles.input_light}` }
                             placeholder="Contract length"
                         >
                             <option value=""></option>
@@ -168,7 +169,7 @@ const UpdateEmployeeForm = ({ employee, handleDisplayAlert }) => {
                             type="number"
                             name="salary"
                             required
-                            className="form-control"
+                            className={ colorTheme === 'dark' ? `form-control ${styles.input_dark}` : `form-control ${styles.input_light}` }
                             id="salary"
                             placeholder="Salary" />
                         <label htmlFor="salary">Salary ($)</label>
@@ -183,7 +184,7 @@ const UpdateEmployeeForm = ({ employee, handleDisplayAlert }) => {
                                     max={employee.leave_days}
                                     name="leave_days"
                                     required
-                                    className="form-control"
+                                    className={ colorTheme === 'dark' ? `form-control ${styles.input_dark}` : `form-control ${styles.input_light}` }
                                     id="leave-days"
                                     placeholder="Available leave days" />
                                 <label htmlFor="leave-days">Available leave days</label>
@@ -193,7 +194,7 @@ const UpdateEmployeeForm = ({ employee, handleDisplayAlert }) => {
                                     ref={register}
                                     name="leave_days"
                                     id="leave-days"
-                                    className="form-select"
+                                    className={ colorTheme === 'dark' ? `form-select ${styles.input_dark}` : `form-select ${styles.input_light}` }
                                     placeholder="Leave days"
                                 >
                                     <option value=""></option>

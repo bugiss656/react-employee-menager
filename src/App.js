@@ -57,19 +57,19 @@ const App = () => {
           <div className="main-wrapper">
             <Switch>
               <Route exact path="/employees">
-                <EmployeesList alert={alert} handleDisplayAlert={handleDisplayAlert} handleHideAlert={handleHideAlert} />
+                <EmployeesList colorTheme={colorTheme} alert={alert} handleDisplayAlert={handleDisplayAlert} handleHideAlert={handleHideAlert} />
               </Route>
               <Route path="/employees/:id">
-                <EmployeeDetails alert={alert} handleDisplayAlert={handleDisplayAlert} handleHideAlert={handleHideAlert} />
+                <EmployeeDetails colorTheme={colorTheme} alert={alert} handleDisplayAlert={handleDisplayAlert} handleHideAlert={handleHideAlert} />
               </Route>
               <Route exact path="/addemployee">
-                <AddEmployee handleDisplayAlert={handleDisplayAlert} />
+                <AddEmployee colorTheme={colorTheme} handleDisplayAlert={handleDisplayAlert} />
               </Route>
               <Route exact path="/updateemployee/:id">
-                <UpdateEmployee handleDisplayAlert={handleDisplayAlert} />
+                <UpdateEmployee colorTheme={colorTheme} handleDisplayAlert={handleDisplayAlert} />
               </Route>
               <Route exact path="/reports">
-                <Reports />
+                <Reports colorTheme={colorTheme} />
               </Route>
               <Route exact path="/settings">
                 <Settings colorTheme={colorTheme} setColorTheme={setColorTheme} />
