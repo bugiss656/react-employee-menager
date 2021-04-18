@@ -1,4 +1,4 @@
-
+import styles from '../themes/Settings.module.css';
 
 const Settings = ({ colorTheme, setColorTheme }) => {
 
@@ -11,7 +11,7 @@ const Settings = ({ colorTheme, setColorTheme }) => {
     }
 
     return (
-        <div className="page-section">
+        <div className={ colorTheme === "dark" ? `page-section ${styles.title_dark}` : `page-section ${styles.title_light}` }>
             <h3>Settings</h3>
             <hr/>
             <div className="row">

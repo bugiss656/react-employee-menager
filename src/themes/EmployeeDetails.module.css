@@ -2,9 +2,14 @@
     margin: 0 25px 0 25px;
 }
 
-.profile_img i {
+.employee_icon {
     color: #e6e6e6;
     font-size: 140px;
+}
+
+.delete_employee_icon {
+    font-size: 24px;
+    padding: 0 5px;
 }
 
 .title_light {
@@ -16,6 +21,21 @@
     background-color: #ffffff !important;
 }
 
+.modal_header_light {
+    color: #000000;
+    background-color: #ffffff;
+}
+
+.modal_body_light {
+    color: #000000;
+    background-color: #ffffff;
+}
+
+.modal_footer_light {
+    color: #000000;
+    background-color: #ffffff;
+}
+
 .title_dark {
     color: #ffffff;
 }
@@ -23,4 +43,19 @@
 .list_group_dark {
     color: #ffffff !important;
     background-color: #37404a !important;
+}
+
+.modal_header_dark {
+    color: #ffffff;
+    background-color: #343a40;
+}
+
+.modal_body_dark {
+    color: #ffffff;
+    background-color: #37404a;
+}
+
+.modal_footer_dark {
+    color: #ffffff;
+    background-color: #343a40;
 }

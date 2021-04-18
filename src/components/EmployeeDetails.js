@@ -30,22 +30,23 @@ const EmployeeDetails = ({ colorTheme, alert, handleDisplayAlert, handleHideAler
                 <>
                     <div className="d-flex flex-row employee-details">
                         <div className={`d-flex flex-column ${styles.profile_img} align-items-center`}>
-                            <i className="bi bi-person-circle"></i>
+                            <i className={`bi bi-person-circle ${styles.employee_icon}`}></i>
                             <Link to={`/updateemployee/${employee.id}`}>
-                                <button className="btn btn-outline-secondary">Update profile info</button>
+                                <button className="btn btn-sm btn-outline-secondary">Update profile info</button>
                             </Link>
-                            <button className="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete profile</button>
+                            <button className="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete profile</button>
                             <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                 <div className="modal-dialog modal-dialog-centered">
                                     <div className="modal-content">
-                                        <div className="modal-header">
+                                        <div className={colorTheme === 'dark' ? `modal-header ${styles.modal_header_dark}` : `modal-header ${styles.modal_header_light}`}>
+                                            <i class={`bi bi-person-x ${styles.delete_employee_icon}`}></i>
                                             <h5>Delete employee</h5>
-                                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            <button type="button" className={colorTheme === 'dark' ? 'btn-close btn-close-white' : 'btn-close'} data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
-                                        <div className="modal-body">
+                                        <div className={colorTheme === 'dark' ? `modal-body ${styles.modal_body_dark}` : `modal-body ${styles.modal_body_light}`}>
                                             <p>Are you sure you want to delete the following employee: <b>{`${employee.first_name} ${employee.last_name}`}</b>?</p>
                                         </div>
-                                        <div className="modal-footer">
+                                        <div className={colorTheme === 'dark' ? `modal-footer ${styles.modal_footer_dark}` : `modal-footer ${styles.modal_footer_light}`}>
                                             <button onClick={deleteEmployee} type="button" className="btn btn-outline-danger" data-bs-dismiss="modal">Delete</button>
                                             <button type="button" className="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
                                         </div>

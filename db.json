@@ -4,7 +4,7 @@
       "first_name": "Geoff",
       "last_name": "Rowley",
       "address": "23 Avenue",
-      "phone_nr": "111333222",
+      "phone_nr": "666666666",
       "email": "rowley@mail.com",
       "position": "Accountant",
       "employment_date": "2021-03-10",
@@ -13,20 +13,6 @@
       "salary": "1200",
       "leave_days": "20",
       "id": 1
-    },
-    {
-      "first_name": "Michael",
-      "last_name": "Jordan",
-      "address": "23 Avenue",
-      "phone_nr": "111333222",
-      "email": "michael@mail.com",
-      "position": "Accountant",
-      "employment_date": "2021-04-11",
-      "contract_type": "Employment contract",
-      "contract_length": "3 months",
-      "salary": "1200",
-      "leave_days": "26",
-      "id": 2
     },
     {
       "first_name": "Tony",
@@ -55,6 +41,20 @@
       "salary": "1200",
       "leave_days": "15",
       "id": 4
+    },
+    {
+      "first_name": "Andrew",
+      "last_name": "Reynolds",
+      "address": "18 Avenue",
+      "phone_nr": "777555666",
+      "email": "reynolds@mail.com",
+      "position": "Customer service",
+      "employment_date": "2021-03-31",
+      "contract_type": "Employment contract",
+      "contract_length": "Indefinite period contract",
+      "salary": "800",
+      "leave_days": "20",
+      "id": 5
     }
   ]
 }

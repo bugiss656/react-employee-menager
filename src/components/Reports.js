@@ -6,20 +6,17 @@ import styles from '../themes/Reports.module.css';
 
 
 const Reports = ({ colorTheme }) => {
+    const [chartFontColor, setChartFontColor] = useState(
+        colorTheme === 'dark' ? '#ffffff' : '#000000'
+    );
+
+    defaults.global.defaultFontColor = chartFontColor;
+
     const [salaryChartData, setSalaryChartData] = useState({});
     const [salaryChartOptions, setSalaryChartOptions] = useState({});
 
     const [leaveDaysChartData, setleaveDaysChartData] = useState({});
     const [leaveDaysChartOptions, setLeaveDaysChartOptions] = useState({});
-    
-
-    const setChartFontColor = () => {
-        const chart_font_color = colorTheme === 'dark' ? 
-            defaults.global.defaultFontColor = '#ffffff' : 
-            defaults.global.defaultFontColor = '#000000';
-
-        return chart_font_color;
-    }
 
 
     const handleEmployeesSalaryChart = () => {
@@ -123,7 +120,6 @@ const Reports = ({ colorTheme }) => {
 
 
     useEffect(() => {
-        setChartFontColor();
         handleEmployeesSalaryChart();
         handleEmployeesLeaveDaysChart();
     }, []);

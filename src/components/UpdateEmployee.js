@@ -1,6 +1,7 @@
 import FetchData from './../hooks/FetchData';
 import { useParams } from 'react-router-dom';
 import UpdateEmployeeForm from './UpdateEmployeeForm';
+import styles from '../themes/UpdateEmployee.module.css';
 
 
 const UpdateEmployee = ({ colorTheme, handleDisplayAlert }) => {
@@ -9,7 +10,7 @@ const UpdateEmployee = ({ colorTheme, handleDisplayAlert }) => {
 
     return (
         <>
-            { isLoading && <div>Loading...</div>}
+            { isLoading && <div className={colorTheme === 'dark' ? `${styles.title_dark}` : `${styles.title_light}`}>Loading...</div>}
             { error && <div>{error}</div>}
             { employee && <UpdateEmployeeForm colorTheme={colorTheme} employee={employee} handleDisplayAlert={handleDisplayAlert} />}
         </>

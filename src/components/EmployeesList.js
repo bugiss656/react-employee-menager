@@ -9,8 +9,8 @@ const EmployeesList = ({ colorTheme, alert, handleHideAlert }) => {
 
 
     return (
-        <section className="page-section">
-            <h3 className={ colorTheme === "dark" ? `${styles.title_dark}` : `${styles.title_light}` }>Workers list</h3>
+        <section className={ colorTheme === "dark" ? `page-section ${styles.title_dark}` : `page-section ${styles.title_light}` }>
+            <h3>Workers list</h3>
             <hr />
             {isLoading && <div>Loading...</div>}
             {error && <div>{error}</div>}
