@@ -19,6 +19,20 @@ const Reports = ({ colorTheme }) => {
     const [leaveDaysChartOptions, setLeaveDaysChartOptions] = useState({});
 
 
+    const sortBySalaryAsc = (a, b) => {
+        const salaryA = parseInt(a.salary);
+        const salaryB = parseInt(b.salary);
+
+        let comparison = 0;
+        if(salaryA > salaryB) {
+            comparison = 1;
+        } else if(salaryA < salaryB) {
+            comparison = -1;
+        }
+        return comparison * -1;
+    }
+
+
     const handleEmployeesSalaryChart = () => {
         const results = [];
 
@@ -35,8 +49,10 @@ const Reports = ({ colorTheme }) => {
                     })
                 })
 
+                results.sort(sortBySalaryAsc);
+
                 const employees_names = results.map(employee => (`${employee.first_name} ${employee.last_name}`));
-                const salaries = results.map(employee => employee.salary);
+                const salaries = results.map(employee => parseInt(employee.salary));
 
                 setSalaryChartData({
                     labels: employees_names,

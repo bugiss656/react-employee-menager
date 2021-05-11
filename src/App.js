@@ -14,7 +14,7 @@ import { useState, useEffect } from 'react';
 const App = () => {
   
   if(!localStorage.getItem('theme')) {
-    localStorage.setItem('theme', '');
+    localStorage.setItem('theme', 'light');
   }
   
   const [colorTheme, setColorTheme] = useState(() => localStorage.getItem('theme'));

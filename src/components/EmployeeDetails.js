@@ -39,7 +39,7 @@ const EmployeeDetails = ({ colorTheme, alert, handleDisplayAlert, handleHideAler
                                 <div className="modal-dialog modal-dialog-centered">
                                     <div className="modal-content">
                                         <div className={colorTheme === 'dark' ? `modal-header ${styles.modal_header_dark}` : `modal-header ${styles.modal_header_light}`}>
-                                            <i class={`bi bi-person-x ${styles.delete_employee_icon}`}></i>
+                                            <i className={`bi bi-person-x ${styles.delete_employee_icon}`}></i>
                                             <h5>Delete employee</h5>
                                             <button type="button" className={colorTheme === 'dark' ? 'btn-close btn-close-white' : 'btn-close'} data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>

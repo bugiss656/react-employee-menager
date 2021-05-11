@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import styles from '../themes/EmployeeForm.module.css';
 
 
@@ -207,6 +207,9 @@ const UpdateEmployeeForm = ({ colorTheme, employee, handleDisplayAlert }) => {
                     }
                 </div>
                 <button className="btn btn-outline-success">Update profile</button>
+                <Link to={`/employees/${employee.id}`}>
+                    <button className="btn btn-outline-danger">Back</button>
+                </Link> 
             </form>
         </section>
     );

@@ -11,7 +11,7 @@
       "contract_type": "Employment contract",
       "contract_length": "1 month",
       "salary": "1200",
-      "leave_days": "20",
+      "leave_days": "15",
       "id": 1
     },
     {
@@ -55,6 +55,48 @@
       "salary": "800",
       "leave_days": "20",
       "id": 5
+    },
+    {
+      "first_name": "Chad",
+      "last_name": "Muska",
+      "address": "12 Avenue",
+      "phone_nr": "123321123",
+      "email": "muska@mail.com",
+      "position": "Accountant",
+      "employment_date": "2021-05-12",
+      "contract_type": "Employment contract",
+      "contract_length": "1 year contract",
+      "salary": "850",
+      "leave_days": "10",
+      "id": 6
+    },
+    {
+      "first_name": "Bam",
+      "last_name": "Margera",
+      "address": "45 Avenue",
+      "phone_nr": "343555666",
+      "email": "margera@mail.com",
+      "position": "Dealer",
+      "employment_date": "2021-05-03",
+      "contract_type": "Business-to-business",
+      "contract_length": "Indefinite period contract",
+      "salary": "1000",
+      "leave_days": "26",
+      "id": 7
+    },
+    {
+      "first_name": "Rune",
+      "last_name": "Glifberg",
+      "address": "1 Avenue",
+      "phone_nr": "555656454",
+      "email": "glifberg@mail.com",
+      "position": "Warehouseman",
+      "employment_date": "2021-04-01",
+      "contract_type": "Employment contract",
+      "contract_length": "1 year contract",
+      "salary": "2500",
+      "leave_days": "26",
+      "id": 8
     }
   ]
 }
