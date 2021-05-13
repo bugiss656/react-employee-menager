@@ -10,7 +10,7 @@ const UpdateEmployeeForm = ({ colorTheme, employee, handleDisplayAlert }) => {
     });
 
     const onSubmit = (data) => {
-        fetch(`http://localhost:5000/employees/${employee.id}`, {
+        fetch(`https://my-json-server.typicode.com/mbugiel656/employee-json-server/employees/${employee.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"

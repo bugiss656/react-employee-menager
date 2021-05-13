@@ -6,7 +6,7 @@ import styles from '../themes/UpdateEmployee.module.css';
 
 const UpdateEmployee = ({ colorTheme, handleDisplayAlert }) => {
     const { id } = useParams();
-    const { data: employee, isLoading, error } = FetchData(`http://localhost:5000/employees/${id}`);
+    const { data: employee, isLoading, error } = FetchData(`https://my-json-server.typicode.com/mbugiel656/employee-json-server/employees/${id}`);
 
     return (
         <>

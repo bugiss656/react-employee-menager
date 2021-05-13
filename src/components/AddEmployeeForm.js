@@ -8,7 +8,7 @@ const AddEmployeeForm = ({ colorTheme, handleDisplayAlert }) => {
     const { register, handleSubmit } = useForm();
 
     const onSubmit = (data) => {
-        fetch('http://localhost:5000/employees', {
+        fetch('https://my-json-server.typicode.com/mbugiel656/employee-json-server/employees', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

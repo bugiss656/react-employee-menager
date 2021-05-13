@@ -5,7 +5,7 @@ import styles from '../themes/EmployeesList.module.css';
 
 
 const EmployeesList = ({ colorTheme, alert, handleHideAlert }) => {
-    const { data: employees, isLoading, error } = FetchData('http://localhost:5000/employees');
+    const { data: employees, isLoading, error } = FetchData('https://my-json-server.typicode.com/mbugiel656/employee-json-server/employees');
 
 
     return (

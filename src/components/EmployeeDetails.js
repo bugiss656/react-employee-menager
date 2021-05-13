@@ -6,13 +6,13 @@ import styles from '../themes/EmployeeDetails.module.css';
 
 const EmployeeDetails = ({ colorTheme, alert, handleDisplayAlert, handleHideAlert }) => {
     const { id } = useParams();
-    const { data: employee, isLoading, error } = FetchData(`http://localhost:5000/employees/${id}`);
+    const { data: employee, isLoading, error } = FetchData(`https://my-json-server.typicode.com/mbugiel656/employee-json-server/employees/${id}`);
     const history = useHistory();
 
     const list_item = colorTheme === 'dark' ? `list-group list-group-flush ${styles.list_group_dark}` : `list-group list-group-flush ${styles.list_group_light}`;
 
     const deleteEmployee = () => {
-        fetch(`http://localhost:5000/employees/${employee.id}`, {
+        fetch(`https://my-json-server.typicode.com/mbugiel656/employee-json-server/employees/${employee.id}`, {
             method: 'DELETE',
         }).then(() => {
             history.push('/employees');

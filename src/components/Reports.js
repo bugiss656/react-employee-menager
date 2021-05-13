@@ -36,7 +36,7 @@ const Reports = ({ colorTheme }) => {
     const handleEmployeesSalaryChart = () => {
         const results = [];
 
-        fetch('http://localhost:5000/employees?_sort=salary&_order=desc')
+        fetch('https://my-json-server.typicode.com/mbugiel656/employee-json-server/employees?_sort=salary&_order=desc')
             .then(res => {
                 return res.json();
             })
@@ -88,7 +88,7 @@ const Reports = ({ colorTheme }) => {
     const handleEmployeesLeaveDaysChart = () => {
         const results = [];
 
-        fetch('http://localhost:5000/employees?_sort=leave_days&_order=desc')
+        fetch('https://my-json-server.typicode.com/mbugiel656/employee-json-server/employees?_sort=leave_days&_order=desc')
             .then(res => {
                 return res.json();
             })
